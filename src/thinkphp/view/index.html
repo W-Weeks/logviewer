@@ -149,11 +149,11 @@
                 <?php echo $config['title']; ?>
             </div>
             <div class="layui-form log-module-select">
-                <?php echo cookie('phplogviewer-module'); ?>
+                <?php echo cookie('logviewer-module'); ?>
                 <select lay-filter="module">
                     <option value="log">默认【log】日志</option>
                     <?php foreach ($modules as $vo): ?>
-                        <option value="<?php echo $vo; ?>" <?php if (cookie('phplogviewer-module') == $vo): ?> selected <?php endif; ?> > 模块【<?php echo $vo; ?>】日志
+                        <option value="<?php echo $vo; ?>" <?php if (cookie('logviewer-module') == $vo): ?> selected <?php endif; ?> > 模块【<?php echo $vo; ?>】日志
                         </option>
                     <?php endforeach; ?>
 
@@ -211,7 +211,7 @@
             $('.log-body').addClass('layui-hide')
             let value = data.value
             if (value != '') {
-                document.cookie = "phplogviewer-module=" + value;
+                document.cookie = "logviewer-module=" + value;
                 module = value
                 ajaxPost(location.href, { 'logviewer_module': value }, function (res) {
                     let list = res.data?.list || ''

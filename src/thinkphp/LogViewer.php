@@ -13,7 +13,7 @@ class LogViewer extends Base
     protected function initialize()
     {
         $randomStr    = $this->randomStr();
-        $module       = cookie('phplogviewer-module');
+        $module       = cookie('logviewer-module');
         $moduleLogs   = $this->getModuleLogs($module);
         $logPath      = $moduleLogs['logPath'] ?? '';
         $logPath      = addslashes($logPath);
@@ -32,10 +32,10 @@ class LogViewer extends Base
             @touch($_path);
             @file_put_contents($_path, $randomStr);
         } else {
-            $randomStr = cookie('phplogviewer', '');
+            $randomStr = cookie('logviewer', '');
             if (empty($randomStr)) {
                 $randomStr = file_get_contents($_path);
-                cookie('phplogviewer', $randomStr);
+                cookie('logviewer', $randomStr);
             }
         }
         return $randomStr;
@@ -123,7 +123,7 @@ class LogViewer extends Base
                     $_logs[$name][] = ['title' => $file, 'id' => (int)$file];
                 }
             }
-            cookie('phplogviewer-module', $name);
+            cookie('logviewer-module', $name);
         } catch (\Throwable $exception) {
             $_logs = [];
         }

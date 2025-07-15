@@ -8,7 +8,7 @@ abstract class Base
     /**
      * @var string
      */
-    protected string $pluginPath = 'wolf-leo' . DIRECTORY_SEPARATOR . 'phplogviewer';
+    protected string $pluginPath = 'weeks' . DIRECTORY_SEPARATOR . 'logviewer';
 
     public function __construct()
     {
