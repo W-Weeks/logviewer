@@ -86,7 +86,7 @@ class LogViewer extends Base
             if ($code < 1) return json(['code' => 0, 'msg' => $result['msg'] ?? '']);
             return json(['code' => 1, 'data' => $result['data'] ?? []]);
         }
-        $viewBasePath = $this->getPluginBaseViewPath('core');
+        $viewBasePath = $this->getPluginBaseViewPath();
         View::config([
             'view_dir_name' => '',
             'view_path'     => root_path() . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR
