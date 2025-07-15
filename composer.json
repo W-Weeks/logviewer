@@ -1,0 +1,20 @@
+{
+    "name": "weeks/logviewer",
+    "description": "日志查看器",
+    "type": "library",
+    "require": {
+        "php": ">=7.4"
+    },
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "logviewer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "weeks"
+        }
+    ],
+    "minimum-stability": "dev"
+}
